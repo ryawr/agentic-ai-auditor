@@ -1,0 +1,7 @@
+"unstructured[pdf]"
+streamlit 
+chromadb 
+pypdf 
+openai
+python-dotenv 
+pytesseract
