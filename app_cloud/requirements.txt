@@ -1,4 +1,5 @@
 unstructured[pdf]
+opencv-python-headless
 streamlit 
 chromadb 
 pypdf 
