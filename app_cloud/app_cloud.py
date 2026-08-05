@@ -162,6 +162,7 @@ if st.button("Extract Policies"):
             {retrieved_chunks}
             
             Task: Using ONLY the provided excerpts, extract the specific compliance policies, rules, and mathematical thresholds relevant to the user query.
+            Do not include any extra information from your own knowledge.
             Format your response as a clear, highly readable summary using markdown formatting (bullet points, bold text). 
             If the excerpts do not contain the answer, state that explicitly.
             """
