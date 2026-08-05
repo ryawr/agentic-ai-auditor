@@ -12,7 +12,9 @@ import pytesseract
 load_dotenv()
 groq_api_key = st.secrets.get("groq_api_key") or os.getenv("groq_api_key")
 
-if os.path.exists('/opt/homebrew/bin/tesseract'):
+if os.path.exists('/usr/bin/tesseract'):
+    pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
+elif os.path.exists('/opt/homebrew/bin/tesseract'):
     pytesseract.pytesseract.tesseract_cmd = '/opt/homebrew/bin/tesseract'
 
 # ---------------------------------------------------------
