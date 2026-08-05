@@ -54,7 +54,7 @@ def get_groq_client(api_key):
 @st.cache_resource
 def load_persistent_db():
     """Connects to a pre-existing ChromaDB folder on the hard drive."""
-    db_path = "./chroma_db"
+    db_path = "./chroma_db/nist_ai_rmf"
     if os.path.exists(db_path):
         client = chromadb.PersistentClient(path=db_path)
         try:
