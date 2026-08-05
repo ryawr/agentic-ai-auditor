@@ -4,18 +4,22 @@ import pypdf
 import os
 from openai import OpenAI
 from dotenv import load_dotenv
-from unstructured.partition.pdf import partition_pdf
-from unstructured.chunking.title import chunk_by_title
+
 import pytesseract
-
-
-load_dotenv()
-groq_api_key = st.secrets.get("groq_api_key") or os.getenv("groq_api_key")
 
 if os.path.exists('/usr/bin/tesseract'):
     pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
 elif os.path.exists('/opt/homebrew/bin/tesseract'):
     pytesseract.pytesseract.tesseract_cmd = '/opt/homebrew/bin/tesseract'
+
+from unstructured.partition.pdf import partition_pdf
+from unstructured.chunking.title import chunk_by_title
+
+
+load_dotenv()
+groq_api_key = st.secrets.get("groq_api_key") or os.getenv("groq_api_key")
+
+
 
 # ---------------------------------------------------------
 # UI Configuration
