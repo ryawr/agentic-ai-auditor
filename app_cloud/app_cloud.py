@@ -19,6 +19,8 @@ from unstructured.chunking.title import chunk_by_title
 load_dotenv()
 groq_api_key = st.secrets.get("groq_api_key") or os.getenv("groq_api_key")
 
+import shutil
+st.sidebar.write("tesseract path:", shutil.which("tesseract"))
 
 
 # ---------------------------------------------------------
