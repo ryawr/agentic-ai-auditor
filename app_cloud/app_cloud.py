@@ -19,8 +19,6 @@ from unstructured.chunking.title import chunk_by_title
 load_dotenv()
 groq_api_key = st.secrets.get("groq_api_key") or os.getenv("groq_api_key")
 
-import shutil
-st.sidebar.write("tesseract path:", shutil.which("tesseract"))
 
 
 # ---------------------------------------------------------
@@ -33,12 +31,12 @@ st.markdown("Extract and verify compliance policies from regulatory PDFs using V
 # ---------------------------------------------------------
 # Sidebar Settings & Mode Selection
 # ---------------------------------------------------------
-st.sidebar.header("Configuration")
+st.sidebar.header("Document Configuration")
 # groq_api_key = st.sidebar.text_input("Groq API Key", type="password", help="Get a free key from console.groq.com")
 
 db_mode = st.sidebar.radio(
-    "Vector Database Source:",
-    ("Load Persistent Database", "Upload New PDF")
+    "Risk & Compliance Guidlines (Vector DB):",
+    ("NIST AI RMF", "Upload New PDF")
 )
 
 # ---------------------------------------------------------
@@ -109,7 +107,7 @@ def process_uploaded_pdf(uploaded_file):
 # ---------------------------------------------------------
 collection = None
 
-if db_mode == "Load Persistent Database":
+if db_mode == "NIST AI RMF":
     collection = load_persistent_db()
     if collection is None:
         st.sidebar.warning("No persistent database found at './chroma_db'.")
@@ -129,7 +127,7 @@ elif db_mode == "Upload New PDF":
 st.markdown("---")
 query_text = st.text_area(
     "What specific compliance policies or rules are you looking for?", 
-    placeholder="e.g., 'What are the rules regarding proxy variables and disparate impact?'",
+    placeholder="e.g., 'What are the challenges of AI risk management?'",
     height=100
 )
 
