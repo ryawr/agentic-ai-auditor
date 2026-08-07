@@ -4,6 +4,17 @@
 
 ### **[Live app](https://agentic-ai-auditor-nifar6hdkdtgkkhquuzprk.streamlit.app/)**
 
+## 🛠️ Architecture & Tech Stack
+
+This project utilizes a modern AI stack tailored for speed and accuracy in agentic workflows:
+
+* **[Unstructured](https://unstructured.io/):** Handles the heavy lifting of document ingestion. It is used for intelligent PDF parsing, partitioning, and chunking of unstructured regulatory text into optimal segments for embedding.
+* **[Chroma DB](https://www.trychroma.com/):** Acts as the core vector database. It locally stores the vector embeddings generated from the document chunks, allowing for fast, persistent (for NIST AI RMF), and temporary (for custom uploads) similarity search.
+* **[Groq API](https://groq.com/):** Powers the Large Language Model (LLM) inference. By utilizing Groq's LPU (Language Processing Unit) inference engine, the application achieves lightning-fast reasoning and response generation based on the retrieved context.
+* **[Streamlit](https://streamlit.io/):** Serves as the frontend framework, delivering an interactive and responsive web application deployed via the cloud.
+
+---
+
 ## 🚀 Features
 
 * **Intelligent Document Parsing:** Accurately extracts text and structural elements from complex regulatory PDFs.
@@ -13,17 +24,6 @@
   * **Dynamic On-the-Go Ingestion:** Users can upload and query any custom regulatory PDF file on the fly. The application will automatically process the document and generate a **temporary vector database** specifically for that session's RAG workflow.
 * **High-Speed Inference:** Generates precise compliance policy answers in real-time.
 * **Interactive Web Interface:** Provides a streamlined, user-friendly dashboard for uploading documents and extracting policies.
-
----
-
-## 🛠️ Architecture & Tech Stack
-
-This project utilizes a modern AI stack tailored for speed and accuracy in agentic workflows:
-
-* **[Unstructured](https://unstructured.io/):** Handles the heavy lifting of document ingestion. It is used for intelligent PDF parsing, partitioning, and chunking of unstructured regulatory text into optimal segments for embedding.
-* **[Chroma DB](https://www.trychroma.com/):** Acts as the core vector database. It locally stores the vector embeddings generated from the document chunks, allowing for fast, persistent (for NIST AI RMF), and temporary (for custom uploads) similarity search.
-* **[Groq API](https://groq.com/):** Powers the Large Language Model (LLM) inference. By utilizing Groq's LPU (Language Processing Unit) inference engine, the application achieves lightning-fast reasoning and response generation based on the retrieved context.
-* **[Streamlit](https://streamlit.io/):** Serves as the frontend framework, delivering an interactive and responsive web application deployed via the cloud.
 
 ---
 
