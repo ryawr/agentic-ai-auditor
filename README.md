@@ -1,7 +1,8 @@
 # 🛡️ Agentic AI Compliance Extractor
 
 **Agentic AI Compliance Extractor** is a robust, retrieval-augmented generation (RAG) application designed to extract and verify compliance policies from regulatory documents. By leveraging advanced vector search and high-speed LLM inference, this tool allows users to semantically query complex regulatory PDFs and receive accurate, context-aware responses. 
-**[Live app]([https://unstructured.io/](https://agentic-ai-auditor-nifar6hdkdtgkkhquuzprk.streamlit.app/)):**
+
+### **[Live app](https://agentic-ai-auditor-nifar6hdkdtgkkhquuzprk.streamlit.app/)**
 
 ## 🚀 Features
 
